@@ -2,6 +2,8 @@ import express from "express"
 import cors from "cors"
 import dotenv from "dotenv"
 import connectdb from "./config/db.js"
+import authRoute from "./routes/authRoute.js"
+import userRoute from "./routes/userRoute.js"
 
 dotenv.config()
 
@@ -16,6 +18,10 @@ app.use(express.json())
 app.get("/",(req,res)=>{
     res.json("Api is fetching...")
 })
+
+app.use("/api/auth",authRoute)
+app.use("/api/user",userRoute)
+
 
 app.listen(PORT,()=>{
     console.log(`server is running on port ${PORT}`)

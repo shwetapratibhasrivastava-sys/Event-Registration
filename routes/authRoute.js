@@ -5,7 +5,7 @@ import { login, register } from "../controllers/authController.js"
 
 const authRoute=express.Router()
 
-userRoute.post("/register",register)
-userRoute.post("/login",login)
+authRoute.post("/register",register)
+authRoute.post("/login",login)
 
-export default userRoute
+export default authRoute
